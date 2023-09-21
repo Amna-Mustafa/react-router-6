@@ -16,7 +16,6 @@ export async function createContact() {
   await fakeNetwork();
   let id = Math.random().toString(36).substring(2, 9);
   let contact = { id, createdAt: Date.now() };
-  console.log("Contact-----", contact)
   let contacts = await getContacts();
   contacts.unshift(contact);
   await set(contacts);
